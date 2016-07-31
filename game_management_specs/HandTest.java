@@ -28,14 +28,14 @@ public class HandTest {
     Card threeH = new Card(SuitType.HEART, CardType.THREE);
     Card qH = new Card(SuitType.HEART, CardType.QUEEN);
 
-    prial = new Hand(kC, kD, kS);
-    runningFlushHigh = new Hand(kS, aS, qS);
-    runningFlushLow = new Hand(twoS, aS, threeS);
-    runHigh = new Hand(aS, qH, kC);
-    runLow = new Hand(aS, threeH, twoH);
-    flush = new Hand(aS, threeS, qS);
-    pair = new Hand(kC, kD, twoS);
-    highCard = new Hand(aS, threeS, qH);
+    prial = new Prial(kC, kD, kS);
+    runningFlushHigh = new RunningFlush(kS, aS, qS);
+    runningFlushLow = new RunningFlush(twoS, aS, threeS);
+    runHigh = new Run(aS, qH, kC);
+    runLow = new Run(aS, threeH, twoH);
+    flush = new Flush(aS, threeS, qS);
+    pair = new Pair(kC, kD, twoS);
+    highCard = new HighCard(aS, threeS, qH);
   }
 
   @Test
@@ -65,13 +65,13 @@ public class HandTest {
 
   @Test
   public void canGetArrayOfHandValues(){
-    assertArrayEquals(new int[] {2, 1, 3}, runningFlushLow.getArrayOfValues());
+    assertArrayEquals(new int[] {1, 13, 2}, runningFlushLow.getArrayOfValues());
   }
 
   @Test
   public void canSortArrayOfHandValues(){
-    int[] values = runningFlushLow.getArrayOfValues();
-    assertArrayEquals(new int[] {1, 2, 3}, runningFlushLow.sortBy(values));
+    int[] values = runningFlushHigh.getArrayOfValues();
+    assertArrayEquals(new int[] {11, 12, 13}, runningFlushLow.sortBy(values));
   }
 
   @Test
@@ -90,35 +90,46 @@ public class HandTest {
   }
 
   @Test
-  public void canIdentifyPrial() {
-    assertEquals(6, prial.score());
-  }
+  public void 
 
-  @Test
-  public void canIdentifyRunningFlush() {
-    assertEquals(5, runningFlushHigh.score());
-    assertEquals(5, runningFlushLow.score());
-  }
-
-  @Test
-  public void canIdentifyRun() {
-    assertEquals(4, runHigh.score());
-    assertEquals(4, runLow.score());
-  }
-
-  @Test
-  public void canIdentifyFlush() {
-    assertEquals(3, flush.score());
-  }
-
-  @Test
-  public void canIdentifyPair() {
-    assertEquals(2, pair.score());
-  }
-
-  @Test
-  public void canIdentifyHighCard() {
-    assertEquals(1, highCard.score());
-  }
+  // @Test
+  // public void canIdentifyPrial() {
+  //   assertEquals(6, prial.score());
+  // }
+  //
+  // @Test
+  // public void canIdentifyRunningFlushHigh() {
+  //   assertEquals(5, runningFlushHigh.score());
+  // }
+  //
+  // @Test
+  // public void canIdentifyRunningFlushLow() {
+  //   assertEquals(5, runningFlushLow.score());
+  // }
+  //
+  // @Test
+  // public void canIdentifyRunHigh() {
+  //   assertEquals(4, runHigh.score());
+  // }
+  //
+  // @Test
+  // public void canIdentifyRunLow() {
+  //   assertEquals(4, runLow.score());
+  // }
+  //
+  // @Test
+  // public void canIdentifyFlush() {
+  //   assertEquals(3, flush.score());
+  // }
+  //
+  // @Test
+  // public void canIdentifyPair() {
+  //   assertEquals(2, pair.score());
+  // }
+  //
+  // @Test
+  // public void canIdentifyHighCard() {
+  //   assertEquals(1, highCard.score());
+  // }
 
 }

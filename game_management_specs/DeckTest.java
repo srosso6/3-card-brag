@@ -13,7 +13,7 @@ public class DeckTest {
   @Before
   public void before(){
     deck = new Deck();
-    card = new Card(SuitType.CLUB, CardType.ACE);
+    card = new Card(SuitType.CLUB, CardType.TWO);
   }
 
   @Test

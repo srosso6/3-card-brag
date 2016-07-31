@@ -22,7 +22,7 @@ public abstract class Hand {
     } else if (cards[0].getValue() == cards[1].getValue() || cards[0].getValue() == cards[2].getValue()) {
       return 2;
     } else {
-      return 0;
+      return false;
     }
   }
 
@@ -67,21 +67,5 @@ public abstract class Hand {
     }
     return false;
   }
-
-  // public int score() {
-  //   int numCardsSame = sameValue();
-  //   switch (numCardsSame) {
-  //     case 3: return 6;
-  //     case 2: return 2;
-  //     case 0: if(sameSuit() && consecutive()) {
-  //       return 5;
-  //     } else if(sameSuit()) {
-  //       return 3;
-  //     } else if(consecutive()) {
-  //       return 4;
-  //     }
-  //   }
-  //   return 1;
-  // }
 
 }
