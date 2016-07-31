@@ -1,7 +1,6 @@
 package game_management;
 
 public enum CardType {
-  ACE,
   TWO,
   THREE,
   FOUR,
@@ -13,7 +12,8 @@ public enum CardType {
   TEN,
   JACK,
   QUEEN,
-  KING
+  KING,
+  ACE
 }
 
 
